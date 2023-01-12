@@ -3,12 +3,13 @@ package escolhedor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 import menu.menu;
 
 public class escolhedor {
 
-	public static void perguntasFamosos(){
+	public static void perguntasFamosos(Scanner teclado, int i){
 		
 		List famosos = new ArrayList();
 		
@@ -39,11 +40,20 @@ public class escolhedor {
 
 		Collections.shuffle(famosos);
 		
-		System.out.println(famosos);
-		
-		menu.perguntafamosos(famosos.get(0).toString());
+		escolhedor.apresentacaoPerguntasFamosos(teclado, i, famosos);
 		
 	}
+	
+	public static void apresentacaoPerguntasFamosos(Scanner teclado, int i, List famosos) {
+			for(i = i; i <= 23;) {
+				System.out.println(famosos);
+				System.out.println((i + 1) + "/24");
+				menu.perguntafamosos(famosos.get(i).toString(), teclado, i, famosos);
+			}
+		
+		System.out.println("PARABÉNS!!! VOCÊ CONSEGUIU GANHAR 1 MILHÃO DE REAIS E RESPONDEU 24 PERGUNTAS SOBRE A VIDA DOS FAMOSOS CORRETAMENTE");
+		menu.principal(teclado);
+}
 	
 	public static void perguntasComidas() {
 		

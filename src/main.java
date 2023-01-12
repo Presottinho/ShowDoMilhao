@@ -15,27 +15,48 @@ public class main {
 		boolean continua = true;
 		do {
 			
-			menu.principal();
-			int opcao1 = teclado.nextInt();
+			int opcao1 = menu.principal(teclado);
 			
 		switch(opcao1) {
 		
 		case 1:
 			
-			escolhedor.perguntasFamosos();
+			menu.escolhaDaCategoria();
+			int escolhaC = teclado.nextInt();
+			switch(escolhaC) {
+				case 1:
+					escolhedor.perguntasFamosos(teclado, 0);
+					break;
+				case 2:
+					escolhedor.perguntasComidas();
+					break;
+				case 3: 
+					escolhedor.perguntasConhecimentoG();
+					
+				case 4:
+					break;
+				
+				case 0:
+					continua = false;
+					break;
+					
+				default:
+					System.out.println("Opção inválida, tente novamente.");
+					menu.escolhaDaCategoria();
+			}
 			
 			break;
 		
 		case 2:
 			menu.creditos();
 			int sair = teclado.nextInt();
-			if(sair == 1) {
+			if(sair == 0) {
 				break;
 			}
 			
 			break;
 			
-		case 3:
+		case 0:
 			
 			continua = false;
 			break;
