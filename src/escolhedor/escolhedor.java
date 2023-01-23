@@ -46,7 +46,6 @@ public class escolhedor {
 	
 	public static void apresentacaoPerguntasFamosos(Scanner teclado, int i, List famosos) {
 			for(i = i; i <= 23;) {
-				System.out.println(famosos);
 				System.out.println((i + 1) + "/24");
 				menu.perguntafamosos(famosos.get(i).toString(), teclado, i, famosos);
 			}
