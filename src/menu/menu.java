@@ -614,7 +614,8 @@ public class menu {
 	public static void creditos() {
 		System.out.println("===============================");
 		System.out.println("Este jogo foi criado por:");
-		System.out.println("Gabriel Presotto");
+		System.out.println("Turma 1i");
+		System.out.println("Larissa Andrade" + "\n" + "Nathalia Gomes Nunes");
 		System.out.println("===============================");
 		System.out.println("0 - Sair");
 		System.out.println("===============================");
